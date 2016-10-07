@@ -1,11 +1,15 @@
 ---
-title: Page Title
+title: Le Home
 ---
 
 .delete-me
   .container
-    %h1 thoughtbot Middleman Starter
+    %h1#bigHeader thoughtbot Middleman Starter
     %p
       You're all set!
       <a href="http://github.com/thoughtbot/proteus-middleman">Let's get started</a>
       building your prototype.
+:javascript
+  var header = document.getElementById("header");
+  var dbRef = firebase.database().ref().child('text');
+  dbRef.on('value', snap => bigHeader.innerText = snap.val());

@@ -6,6 +6,18 @@
     %meta{name: "viewport", content: "width=device-width, initial-scale=1"}
     %title= current_page.data.title || "The Middleman"
     = stylesheet_link_tag "application"
+    //Firebase Stuff
+    %script(src="https://www.gstatic.com/firebasejs/3.4.1/firebase.js")
+    :javascript
+       // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyB13vdNsU2hnzk6wdE1Pl_sC1DwJwVcjeY",
+        authDomain: "turbulence-12343.firebaseapp.com",
+        databaseURL: "https://turbulence-12343.firebaseio.com",
+        storageBucket: "turbulence-12343.appspot.com",
+        messagingSenderId: "566116347083"
+      };
+      firebase.initializeApp(config);
 
   %body{class: page_classes}
     = yield
